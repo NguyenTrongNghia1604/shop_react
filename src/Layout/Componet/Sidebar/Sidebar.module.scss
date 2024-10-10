@@ -1,0 +1,14 @@
+//
+@import url('../../../assets/root/root.module.scss');
+
+.sidebar {
+    width: 250px !important;
+    .category {
+        height: 300px;
+        overflow: auto;
+        scrollbar-width: none; /* Firefox */
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+    }
+}

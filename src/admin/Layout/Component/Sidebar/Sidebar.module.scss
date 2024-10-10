@@ -1,0 +1,101 @@
+@import url('../../../../assets/root/root.module.scss');
+.sidebar {
+    position: fixed;
+    width: 0;
+    top: 73px;
+    left: 0;
+    bottom: 0;
+    z-index: 996;
+    transition: width 0.3s ease;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #aab7cf transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    
+
+    .sidebar-nav {
+        padding: 0 10px;
+
+        .item {
+            margin-bottom: 5px;
+            .hr {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                color: var(--bs-black);
+                span {
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+                &:hover {
+                    border-radius: var(--border-radius5);
+                    background-color: var(--bs-gray-400);
+                }
+            }
+
+            .component {
+                display: none;
+                .item_comp {
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                    .hr_cp {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 10px 30px;
+                        color: var(--bs-black);
+                        span {
+                            i {
+                                margin-right: 10px;
+                            }
+                        }
+                        &:hover {
+                            border-radius: var(--border-radius5);
+                            color: var(--bs-gray-400);
+                        }
+                    }
+                }
+            }
+            .act {
+                display: block;
+            }
+        }
+        .act {
+            .hr {
+                border-radius: var(--border-radius5);
+                background-color: var(--bs-gray-300);
+            }
+        }
+    }
+}
+.open {
+    width: 300px;
+}
+/* Sidebar.module.scss */
+
+// .sidebar-enter {
+//     transform: translateX(-100%);
+//     opacity: 0;
+// }
+
+// .sidebar-enter-active {
+//     transform: translateX(0);
+//     opacity: 1;
+//     transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+// }
+
+// .sidebar-exit {
+//     transform: translateX(0);
+//     opacity: 1;
+// }
+
+// .sidebar-exit-active {
+//     transform: translateX(-100%);
+//     opacity: 0;
+//     transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+// }
+/* Định nghĩa trạng thái ban đầu khi vào */
+/* CSS (Sidebar.module.scss hoặc file CSS tương ứng) */

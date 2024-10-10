@@ -1,0 +1,321 @@
+//
+@import url('../../assets/root/root.module.scss');
+.details-product {
+    .item-center {
+        padding-top: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        a {
+            color: var(--bs-blue);
+        }
+        i {
+            padding: 0 5px;
+        }
+    }
+    .details {
+        margin-top: 20px;
+        .clg-5 {
+            .image {
+                width: var(--set-width100);
+                height: 400px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                border-radius: var(--border-radius7);
+            }
+            .sile-img {
+                display: flex;
+                align-items: center;
+
+                .tab-img {
+                    width: 70px;
+                    height: 70px;
+                    padding: 10px;
+                    cursor: pointer;
+                    img {
+                        width: var(--set-width100);
+                        height: var(--set-height100);
+                    }
+                }
+            }
+            .item-info {
+                display: flex;
+                align-items: center;
+                .share {
+                    border-right: 2px solid black;
+                    padding-right: 10px;
+                    span {
+                        font-size: 20px;
+                        color: var(--bs-black);
+                        font-weight: 400;
+                    }
+                    button {
+                        i {
+                            font-size: 20px;
+                            color: var(--bs-black);
+                        }
+                    }
+                }
+                .like {
+                    padding-left: 10px;
+                    button {
+                        i {
+                            font-size: 20px;
+                            color: var(--bs-black);
+                        }
+                        .act {
+                            color: var(--bs-red) !important;
+                        }
+                    }
+                    span {
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: var(--bs-black);
+                    }
+                }
+            }
+        }
+        .clg-7 {
+            .name {
+                display: flex;
+                margin-bottom: var(--side10);
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    padding: 5px 10px;
+                    color: var(--bs-white);
+                    background-color: var(--bs-warning);
+                    border-radius: var(--border-radius7);
+                    margin-right: var(--side10);
+                }
+                h3 {
+                }
+            }
+            .size {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .sile-btn {
+                    width: 50px;
+                    height: 30px;
+                    margin: 0 7px;
+                    border-radius: 5px;
+                    background-color: var(--bs-gray-600);
+                }
+                .act {
+                    border: 3px solid var(--bs-warning);
+                }
+                .turns {
+                    display: flex;
+                    align-items: center;
+                    button {
+                        width: 30px;
+                        height: 30px;
+                        background-color: var(--bs-gray-600);
+                    }
+                    input {
+                        width: 50px;
+                        background-color: var(--bs-white);
+                        border: 1px solid var(--bs-gray-800);
+                        height: 30px;
+                        text-align: center;
+                    }
+                }
+            }
+            @media only screen and (min-width: 344px) and (max-width: 767px) {
+                .name {
+                    margin: 10px 0;
+                }
+                .size {
+                    display: block;
+                    .add-size {
+                        margin: 20px 0;
+                    }
+                }
+            }
+            .promotion {
+                width: var(--set-width100);
+                margin-top: 20px;
+                background: #fffad7;
+                border: 1px dashed #f85c00;
+                border-radius: 4px;
+                padding: 9px;
+                margin-bottom: 20px;
+                h3 {
+                }
+                ul {
+                    li {
+                        padding: 7px 0;
+                        i {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+            .price {
+                p {
+                    display: flex;
+                    align-items: center;
+                    del {
+                        font-size: 20px;
+                        margin: 10px;
+                        color: var(--bs-red);
+                    }
+                    ins {
+                        font-size: 23px;
+                        margin: 10px;
+                        color: var(--bs-red);
+                    }
+                }
+            }
+            .add-to-cart {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                button {
+                    width: 170px;
+                    height: 40px;
+                    background-color: #f85c00;
+                    font-size: 20px;
+                    font-weight: 500;
+                    border-radius: 5px;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+    .description {
+        margin-top: 30px;
+        .clg-9 {
+            .info-des {
+                border-radius: var(--border-radius7);
+                padding: 10px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                .title {
+                    margin-bottom: 20px;
+                }
+            }
+            .evaluation {
+                margin-top: 20px;
+                border-radius: var(--border-radius7);
+                padding: 10px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                .title {
+                    border-bottom: 1px solid var(--bs-black);
+                }
+                .overview-comment {
+                    padding: 10px 20px;
+                    display: flex;
+                    background-color: var(--bs-f8);
+                    border: 1px solid var(--bs-f8);
+                    .star-overview {
+                        width: 130px;
+                        .number-star {
+                            display: flex;
+                            align-items: center;
+                            color: var(--bs-red);
+                            h3 {
+                            }
+                            span {
+                                font-weight: 500;
+                                font-size: 18px;
+                                margin-left: 7px;
+                            }
+                        }
+                        .info-star {
+                            i {
+                                font-size: 20px;
+                                color: var(--bs-gray-500);
+                            }
+                        }
+                    }
+                    .overview {
+                        display: flex; /* Bật chế độ Flexbox */
+                        flex-wrap: wrap; /* Cho phép các phần tử con tự động xuống hàng */
+                        button {
+                            flex: 1; /* Chia đều không gian giữa các phần tử con */
+                            min-width: 100px; /* Đặt chiều rộng tối thiểu cho các phần tử con */
+                            max-width: 100px;
+                            height: 30px;
+                            margin: 0 10px;
+                            border: 1px solid var(--bs-gray);
+                            color: var(--bs-black);
+                        }
+                    }
+                }
+                .list-comment {
+                    padding: 20px 30px;
+                    .item {
+                        display: flex;
+                        margin-top: 20px;
+                        .img-display {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            background-color: var(--bs-gray-500);
+                            .img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .info-comment {
+                            h4 {
+                                font-size: 18px;
+                            }
+                            .info-star {
+                                i {
+                                    color: var(--bs-orange);
+                                    font-size: 16px;
+                                }
+                            }
+                            span {
+                            }
+                            .description {
+                                div {
+                                    line-height: 14px;
+                                    display: flex;
+                                    span {
+                                        color: var(--bs-gray-600);
+                                    }
+                                    p {
+                                        margin-left: 5px;
+                                        color: var(--bs-black);
+                                    }
+                                }
+                            }
+                            .cm-img {
+                                width: 70px;
+                                height: 70px;
+                                margin-top: 20px;
+                                display: flex;
+                                align-items: center;
+
+                                .img {
+                                    width: var(--set-width100);
+                                    height: var(--set-height100);
+                                    border: 1px solid var(--bs-gray-800);
+                                    margin: 0 5px;
+                                    cursor: pointer;
+                                }
+                            }
+                            .like {
+                                margin-top: 10px;
+                                i {
+                                    color: var(--bs-gray-500);
+                                    font-size: 22px;
+                                    cursor: pointer;
+                                }
+                                .color {
+                                    color: var(--bs-blue);
+                                }
+                                span {
+                                    margin-left: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

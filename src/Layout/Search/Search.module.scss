@@ -1,0 +1,112 @@
+.search {
+    width: var(--set-width100);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //
+    .search-resualt,
+    .resualt {
+        width: 500px;
+    }
+    .resualt {
+        height: var(--set-height100);
+        background-color: var(--secondary-color);
+        border-bottom-left-radius: var(--border-radius7);
+        border-bottom-right-radius: var(--border-radius7);
+        margin-top: -2px;
+        transition: all 0.5s;
+        h3 {
+            padding: 5px 5px;
+            font-size: 16px;
+            text-align: -webkit-left;
+            color: var(--bs-gray-500);
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                padding: 10px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                font-weight: 500;
+                transition: all 0.5s;
+                cursor: pointer;
+                &:hover {
+                    background-color: var(--bs-gray-400);
+                }
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .search-resualt {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        background-color: var(--secondary-color);
+        border-radius: var(--border-radius7);
+        overflow: hidden;
+
+        input {
+            width: var(--set-width100);
+            height: var(--set-height100);
+            padding: 5px 10px;
+            border-radius: var(--border-radius7);
+            border: none;
+            outline: none;
+        }
+        .action {
+            display: flex;
+            align-items: center;
+            // loading
+            .loading {
+                margin-right: 10px;
+                animation: 1s linear 0s infinite normal none running loading;
+                i {
+                    color: var(--bs-dark);
+                }
+            }
+            @keyframes loading {
+                0% {
+                    transform: rotate(0);
+                }
+                100% {
+                    transform: rotate(1turn);
+                }
+            }
+            // clear
+            .clear {
+                margin-right: 10px;
+                cursor: pointer;
+                i {
+                    color: var(--bs-dark);
+                }
+            }
+            .search-btn {
+                width: 40px;
+                height: 40px;
+                border-top-right-radius: var(--border-radius7);
+                border-bottom-right-radius: var(--border-radius7);
+                background-color: var(--bs-dark-text-emphasis);
+                i {
+                    color: var(--secondary-color);
+                }
+            }
+        }
+    }
+    @media only screen and (min-width: 390px) and (max-width: 797px) {
+        .search-resualt,
+        .resualt {
+            width: 300px;
+        }
+    }
+    @media only screen and (min-width: 601px) and (max-width: 768px) {
+        .search-resualt,
+        .resualt {
+            width: 400px;
+        }
+    }
+}

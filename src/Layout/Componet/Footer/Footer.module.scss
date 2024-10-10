@@ -1,0 +1,72 @@
+@import url('../../../assets/root/root.module.scss');
+.footer {
+    width: var(--set-width100);
+    height: var(--set-height100);
+    background-color: var(--bs-black);
+    .rw {
+        margin: 0;
+        padding: 0;
+        .clg-a4 {
+            .logo {
+                width: 200px;
+                height: 130px;
+                img {
+                    width: var(--set-width100);
+                    height: var(--set-height100);
+                }
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: var(--bs-white);
+                    list-style: inside;
+                }
+            }
+        }
+        .clg-b4 {
+            text-align: center;
+            margin-top: 20px;
+            .footer-category {
+                h3 {
+                    color: var(--bs-white);
+                }
+                ul {
+                    li {
+                        padding: 10px;
+                        cursor: pointer;
+                        a {
+                            color: var(--bs-white);
+                        }
+                    }
+                }
+            }
+        }
+        .clg-c4 {
+            text-align: center;
+            margin-top: 20px;
+            .footer-contact {
+                h3 {
+                    color: var(--bs-white);
+                }
+                ul {
+                    li {
+                        padding: 10px;
+
+                        a {
+                            cursor: pointer;
+                            color: var(--bs-white);
+                        }
+                    }
+                }
+            }
+        }
+        span {
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import url('../../../../assets/root/root.module.scss');
+.toast-confirm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    z-index: 1;
+    .info {
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        border-radius: var(--border-radius7);
+        background-color: var(--bs-white);
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        .tit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h4 {
+            }
+            button {
+                cursor: pointer;
+                i {
+                    color: var(--bs-black);
+                    font-size: 20px;
+                }
+            }
+        }
+        .action {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            button {
+                width: 100px;
+                margin: 0 10px;
+            }
+            .next {
+                background-color: var(--bs-red);
+            }
+            .close {
+                background-color: var(--bs-gray-500);
+            }
+        }
+    }
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--set-width100);
+    height: var(--set-height100);
+    background-color: rgba(0, 0, 0, 0.24);
+}
+
+.hide {
+    display: none;
+}

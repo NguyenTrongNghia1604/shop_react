@@ -1,0 +1,79 @@
+@import url('../../assets/root/root.module.scss');
+
+.order {
+    .wrapper {
+        .info {
+            h3 {
+                margin-top: 50px;
+                margin-bottom: 20px;
+            }
+            .menu_order {
+                padding: 20px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                .left {
+                    span {
+                        margin-left: 30px;
+                        color: var(--bs-black);
+                        font-size: 23px;
+                    }
+                }
+                .right {
+                    ul {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        li {
+                            font-size: 23px;
+                            color: var(--bs-black);
+                        }
+                    }
+                }
+            }
+            .item {
+                margin-top: 10px;
+                padding: 20px;
+                border-radius: var(--border-radius7);
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                .info_order {
+                    display: flex;
+                    align-items: center;
+                    .img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                    span {
+                        font-size: 20px;
+                        margin-left: 20px;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2; /* Hiển thị tối đa 3 dòng */
+                        overflow: hidden; /* Ẩn phần nội dung vượt quá */
+                    }
+                }
+                .price_act {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    .price {
+                        ins {
+                            font-size: 20px;
+                            color: var(--bs-red);
+                        }
+                    }
+                    .status {
+                        span {
+                            color: var(--bs-black);
+                            font-size: 20px;
+                        }
+                    }
+                    .info_act {
+                        i {
+                            font-size: 20px;
+                            color: var(--bs-red);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

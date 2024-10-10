@@ -1,0 +1,70 @@
+@import url('../../../assets/root/root.module.scss');
+.home_admin {
+    padding: 10px;
+    background-color: #b3cde0;
+    .add {
+        width: 100px;
+        height: 40px;
+    }
+    .title {
+        max-width: 100px; /* Giới hạn chiều rộng của phần tử */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .desc {
+        max-width: 200px; /* Giới hạn chiều rộng của phần tử */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .images {
+        width: 70px;
+        height: 60px;
+        img {
+            width: var(--set-width100);
+            height: var(--set-height100);
+        }
+    }
+    .action {
+        button {
+            i {
+                font-size: 20px;
+                color: var(--bs-black);
+            }
+        }
+        .delete {
+            i {
+                color: var(--bs-red);
+            }
+        }
+        .edit {
+            i {
+                color: var(--bs-orange);
+            }
+        }
+    }
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .page-item {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        color: #fff;
+        background-color: black;
+        cursor: pointer;
+        .page-link {
+        }
+        &.active {
+            border-color: #ff6901;
+            color: #ff9601;
+            border: 1px solid #ff6901;
+        }
+    }
+}

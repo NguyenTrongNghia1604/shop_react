@@ -1,0 +1,189 @@
+@import url('../../assets/root/root.module.scss');
+.protify {
+    padding: 50px;
+    .info_protify {
+        .left {
+            .info {
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                .avatar {
+                    text-align: center;
+                    padding: 20px 0;
+                    border-bottom: 1px solid var(--bs-gray-400);
+                    .img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                    }
+                    .name {
+                        margin-left: 10px;
+                        h4 {
+                        }
+                        span {
+                            cursor: pointer;
+                            i {
+                            }
+                        }
+                    }
+                }
+            }
+            .sidebar {
+                .ul {
+                    padding: 20px 40px;
+                    .item {
+                        cursor: pointer;
+
+                        .acc {
+                            display: flex;
+                            align-items: center;
+                            &:hover {
+                                color: var(--bs-red);
+                            }
+                            i {
+                                margin-right: 10px;
+                                font-size: 22px;
+                            }
+                            span {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right {
+            .info {
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                padding: 20px 10px;
+                .hs {
+                    padding: 20px 20px;
+
+                    border-bottom: 1px solid var(--bs-gray-400);
+                    h4 {
+                        font-size: 30px;
+                    }
+                    span {
+                        font-size: 18px;
+                    }
+                }
+                .form_hs {
+                    padding: 20px 10px;
+                    display: flex;
+                    align-items: center;
+                    label {
+                        width: 200px;
+                        font-size: 20px;
+                    }
+                    input {
+                        width: var(--set-width100);
+                        height: 40px;
+                        margin-left: 10px;
+                        outline: none;
+                        padding: 10px;
+                        font-size: 20px;
+                        background-color: var(--bs-gray-400);
+                    }
+                    span {
+                        font-size: 20px;
+                        color: var(--bs-blue);
+                        text-decoration: underline;
+                    }
+                }
+                .save {
+                    text-align: center;
+                    margin-top: 35px;
+                    button {
+                        width: 200px;
+                        height: 40px;
+                        background-color: var(--bs-blue);
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.edit_info_user {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    .info {
+        width: 500px;
+        height: 700px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: var(--bs-white);
+        padding: 20px 10px;
+        border-radius: var(--border-radius7);
+        .exit {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            cursor: pointer;
+            i {
+                font-size: 23px;
+                color: var(--bs-black);
+            }
+        }
+        .hs {
+            padding: 20px 20px;
+
+            border-bottom: 1px solid var(--bs-gray-400);
+            h4 {
+                font-size: 30px;
+            }
+            span {
+                font-size: 18px;
+            }
+        }
+        .form_hs {
+            padding: 20px 10px;
+            label {
+                width: 200px;
+                font-size: 20px;
+            }
+            input {
+                width: var(--set-width100);
+                height: 50px;
+                outline: none;
+                padding: 10px;
+                font-size: 20px;
+                background-color: var(--bs-gray-400);
+            }
+            span {
+                font-size: 20px;
+                color: var(--bs-blue);
+                text-decoration: underline;
+            }
+            select {
+                width: 150px;
+                height: 30px;
+            }
+        }
+        .save {
+            text-align: center;
+            margin-top: 15px;
+            button {
+                width: 200px;
+                height: 40px;
+                background-color: var(--bs-blue);
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.edit_hide {
+    display: none;
+}
+
+// background
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.34);
+}

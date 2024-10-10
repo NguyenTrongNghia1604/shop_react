@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*ul {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+button,
+input {
+    border: none;
+    background-color: transparent;
+}
+* a {
+    color: transparent;
+    text-decoration: none;
+}
