@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shop_react/static/css/main.416ae9cb.css",
-    "main.js": "/shop_react/static/js/main.531714a1.js",
+    "main.css": "/shop_react/static/css/main.bd7530c6.css",
+    "main.js": "/shop_react/static/js/main.f1fda848.js",
     "static/js/453.3669db72.chunk.js": "/shop_react/static/js/453.3669db72.chunk.js",
     "static/media/backgound.jpg": "/shop_react/static/media/backgound.daffee13f010b22dd758.jpg",
     "static/media/fa-thin-100.ttf": "/shop_react/static/media/fa-thin-100.3f01811ac4cb430abf8b.ttf",
@@ -29,12 +29,12 @@
     "static/media/LG.png": "/shop_react/static/media/LG.dd1f3723e69660b8f9a6.png",
     "static/media/LOGO.png": "/shop_react/static/media/LOGO.b91ff3a469e743e8286b.png",
     "index.html": "/shop_react/index.html",
-    "main.416ae9cb.css.map": "/shop_react/static/css/main.416ae9cb.css.map",
-    "main.531714a1.js.map": "/shop_react/static/js/main.531714a1.js.map",
+    "main.bd7530c6.css.map": "/shop_react/static/css/main.bd7530c6.css.map",
+    "main.f1fda848.js.map": "/shop_react/static/js/main.f1fda848.js.map",
     "453.3669db72.chunk.js.map": "/shop_react/static/js/453.3669db72.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.416ae9cb.css",
-    "static/js/main.531714a1.js"
+    "static/css/main.bd7530c6.css",
+    "static/js/main.f1fda848.js"
   ]
 }
