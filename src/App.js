@@ -26,12 +26,13 @@ function AuthWrapper({ children }) {
             return null;
         };
         const status = getCookie('status');
+        const userId = getCookie('userId');
         if (status === 'true') {
             return;
         } else {
             const checkAuth = async () => {
                 try {
-                    const res = await restfulApi.checkLogin();
+                    const res = await restfulApi.checkLogin(userId);
                     if (res && res.data && res.data.EC === 0) {
                         document.cookie = `userId=${encodeURIComponent(res.data.DT.userId)}`;
                         document.cookie = `fullname=${encodeURIComponent(res.data.DT.fullName)}`;
@@ -41,18 +42,18 @@ function AuthWrapper({ children }) {
                     }
                 } catch (error) {
                     // Hoặc xóa tất cả cookie (nếu cần)
-                    //const cookies = document.cookie.split(';');
-                    // for (let i = 0; i < cookies.length; i++) {
-                    //     const cookie = cookies[i];
-                    //     const eqPos = cookie.indexOf('=');
-                    //     const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-                    //     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
-                    // }
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i];
+                        const eqPos = cookie.indexOf('=');
+                        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+                    }
                     // Xóa những cookie cần thiết
-                    const cookiesToDelete = ['userId', 'fullname', 'images', 'status']; // Danh sách cookie cần xóa
-                    cookiesToDelete.forEach((cookie) => {
-                        document.cookie = `${cookie}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
-                    });
+                    // const cookiesToDelete = ['userId', 'fullname', 'images', 'status']; // Danh sách cookie cần xóa
+                    // cookiesToDelete.forEach((cookie) => {
+                    //     document.cookie = `${cookie}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
+                    // });
                     //console.log('Đã xóa các cookie cần thiết');
                 }
             };

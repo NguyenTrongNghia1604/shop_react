@@ -190,8 +190,8 @@ const login = (formData) => {
     });
 };
 
-const checkLogin = () => {
-    return axios.get('http://localhost:8081/api/v1/check-login');
+const checkLogin = (userId) => {
+    return axios.get(`http://localhost:8081/api/v1/check-login?userId=${encodeURIComponent(userId)}`);
 };
 
 // clearSessionLogin
