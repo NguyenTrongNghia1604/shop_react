@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 const categoryDB = () => {
-    return axios.get('http://localhost:8081/api/v1/category');
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/category`);
 };
 
 // login by tk admin
 const loginAdmin = (formData) => {
-    return axios.post('http://localhost:8081/api/v1/login-admin', formData, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/login-admin`, formData, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -15,9 +15,9 @@ const loginAdmin = (formData) => {
 
 // check phiên login admin
 const versionLogin = () => {
-    //return axios.get('http://localhost:8081/api/v1/check-login-admin');
+    //return axios.get('${process.env.URL_BACKEND}/api/v1/check-login-admin');
     const token = localStorage.getItem('role'); // Lấy token từ localStorage
-    return axios.get('http://localhost:8081/api/v1/check-login-admin', {
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/check-login-admin`, {
         headers: {
             Authorization: `Bearer ${token}`, // Gửi token trong header
         },
@@ -27,7 +27,7 @@ const versionLogin = () => {
 // xử lý logout admin
 // const logoutAdmin = () => {
 //     const token = localStorage.getItem('token'); // Lấy token từ localStorage
-//     return axios.get('http://localhost:8081/api/v1/logout-admin', {
+//     return axios.get('${process.env.URL_BACKEND}/api/v1/logout-admin', {
 //         headers: {
 //             Authorization: `Bearer ${token}`, // Gửi token trong header
 //         },
@@ -36,7 +36,7 @@ const versionLogin = () => {
 
 // nhận database Products phân trang
 const paginationProductsDB = (currentPages, currentLimit) => {
-    return axios.get(`http://localhost:8081/api/v1/products/read?page=${currentPages}&limit=${currentLimit}`, {
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/products/read?page=${currentPages}&limit=${currentLimit}`, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -50,7 +50,7 @@ const createProductsDB = (formData) => {
     for (const [key, value] of formData.entries()) {
         console.log(key, value);
     }
-    return axios.post(`http://localhost:8081/api/v1/create-products`, formData, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/create-products`, formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
         },
@@ -58,7 +58,7 @@ const createProductsDB = (formData) => {
 };
 
 const updateProductsDB = (formData, id) => {
-    return axios.post(`http://localhost:8081/api/v1/update-products/${id}`, formData, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/update-products/${id}`, formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
         },
@@ -66,12 +66,12 @@ const updateProductsDB = (formData, id) => {
 };
 
 const deleteProductDB = (id) => {
-    return axios.delete(`http://localhost:8081/api/v1/delete-products/${id}`);
+    return axios.delete(`${process.env.URL_BACKEND}/api/v1/delete-products/${id}`);
 };
 
 // shoppingCart
 const shoppingCart = (formData) => {
-    return axios.post('http://localhost:8081/api/v1/shopping-cart', formData, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/shopping-cart`, formData, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -80,7 +80,7 @@ const shoppingCart = (formData) => {
 
 // shopping cart login success
 const shoppingCartLogin = (cart) => {
-    return axios.post('http://localhost:8081/api/v1/shopping-cart-login', cart, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/shopping-cart-login`, cart, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -89,7 +89,7 @@ const shoppingCartLogin = (cart) => {
 
 // xử lý xóa sản phẩm trong shopping cart
 const deleteShoppingCart = (id) => {
-    return axios.post(`http://localhost:8081/api/v1/delete-shopping-cart/${id}`, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/delete-shopping-cart/${id}`, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -109,7 +109,7 @@ const checkLoginStatus = getCookie('status');
 // take data shopping cart
 const takeDataShoppingCart = () => {
     if (checkLoginStatus === 'true') {
-        return axios.get('http://localhost:8081/api/v1/take-data-shoppingcart');
+        return axios.get(`${process.env.URL_BACKEND}/api/v1/take-data-shoppingcart`);
     } else {
         return;
     }
@@ -118,39 +118,39 @@ const takeDataShoppingCart = () => {
 // take and display data products
 // take toastCart
 const toastCart = (id) => {
-    return axios.get(`http://localhost:8081/api/v1/take-data-toast-cart/${id}`);
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/take-data-toast-cart/${id}`);
 };
 // trang chủ
 const takeDataProducts = () => {
-    return axios.get('http://localhost:8081/api/v1/take-data-products');
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/take-data-products`);
 };
 //trang áo nam
 const takeDataShirtMent = () => {
-    return axios.get('http://localhost:8081/api/v1/take-data-shirt-men');
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/take-data-shirt-men`);
 };
 // trang quần
 const takeDataPants = () => {
-    return axios.get('http://localhost:8081/api/v1/take-data-pants');
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/take-data-pants`);
 };
 // trang phụ kiện
 const takeDataAccessories = () => {
-    return axios.get('http://localhost:8081/api/v1/take-data-accessories');
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/take-data-accessories`);
 };
 // trang sale
 const takeDataSale = () => {
-    return axios.get('http://localhost:8081/api/v1/take-data-sale');
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/take-data-sale`);
 };
 // end take data
 
 // take data phụ kiện tương thích
 const takeDataCategory = () => {
-    return axios.get('http://localhost:8081/api/v1/take-data-compatible-accessories');
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/take-data-compatible-accessories`);
 };
 // end
 
 // search product
 const searchProducts = (formData) => {
-    return axios.post(`http://localhost:8081/api/v1/search-products`, formData, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/search-products`, formData, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -159,23 +159,23 @@ const searchProducts = (formData) => {
 
 // category product
 const categoryProduct = (id) => {
-    return axios.get(`http://localhost:8081/api/v1/category-products/${id}`);
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/category-products/${id}`);
 };
 //
 
 // result search
 const getKeyWword = () => {
-    return axios.get(`http://localhost:8081/api/v1/search-keyword`);
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/search-keyword`);
 };
 
 // take category
 const takeCategory = () => {
-    return axios.get('http://localhost:8081/api/v1/take-data-category');
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/take-data-category`);
 };
 
 // auth
 const register = (formData) => {
-    return axios.post('http://localhost:8081/api/v1/register', formData, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/register`, formData, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -183,7 +183,7 @@ const register = (formData) => {
 };
 
 const login = (formData) => {
-    return axios.post('http://localhost:8081/api/v1/login', formData, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/login`, formData, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -191,27 +191,27 @@ const login = (formData) => {
 };
 
 const checkLogin = (userId) => {
-    return axios.get(`http://localhost:8081/api/v1/check-login?userId=${encodeURIComponent(userId)}`);
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/check-login?userId=${encodeURIComponent(userId)}`);
 };
 
 // clearSessionLogin
 const clearSessionLogin = () => {
-    return axios.get('http://localhost:8081/api/v1/clear-session-login');
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/clear-session-login`);
 };
 
 // thanh toán
 const payment = (data) => {
-    return axios.post('http://localhost:8081/api/v1/payment', data);
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/payment`, data);
 };
 
 // lấy thông tin người dùng
 const getUser = (userId) => {
-    return axios.get(`http://localhost:8081/api/v1/get-user/${userId}`);
+    return axios.get(`${process.env.URL_BACKEND}/api/v1/get-user/${userId}`);
 };
 
 // cập nhật thông tin người dùng
 const updataInfoUser = (data) => {
-    return axios.post('http://localhost:8081/api/v1/updata-info-user', data, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/updata-info-user`, data, {
         headers: {
             'Content-Type': 'multipart/form-data',
         },
@@ -220,7 +220,7 @@ const updataInfoUser = (data) => {
 
 // xử lý like product
 const likeProduct = (formData) => {
-    return axios.post('http://localhost:8081/api/v1/like-product', formData, {
+    return axios.post(`${process.env.URL_BACKEND}/api/v1/like-product`, formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
         },

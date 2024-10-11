@@ -10,6 +10,17 @@ const cx = classNames.bind(style);
 export default function Sidebar() {
     const navigate = useNavigate();
     const [category, setCategory] = useState([]);
+
+    const getCookie = (name) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) {
+            return decodeURIComponent(parts.pop().split(';').shift());
+        }
+        return null;
+    };
+    const fullName = getCookie('fullname');
+    const status = getCookie('status');
     useEffect(() => {
         const fetchData = async () => {
             let res = await restfulApi.categoryDB();
@@ -19,6 +30,24 @@ export default function Sidebar() {
         };
         fetchData();
     }, []);
+
+    //
+    const handleClickProtify = () => {
+        if (status === 'true') {
+            navigate('/protify');
+        } else {
+            navigate('/login');
+        }
+    };
+
+    //
+    const handleClieckDH = () => {
+        if (status === 'true') {
+            navigate('/shoppingCart');
+        } else {
+            navigate('/login');
+        }
+    }
 
     // handleChooseCategory
     const handleChooseCategory = (id, name) => {
@@ -35,7 +64,7 @@ export default function Sidebar() {
         >
             <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                    Nguyễn Trọng Nghĩa
+                    {fullName || 'User'}
                 </h5>
                 <button
                     type="button"
@@ -54,15 +83,15 @@ export default function Sidebar() {
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                         >
-                            <i class="fa-solid fa-user"></i> NGUYỄN TRỌNG NGHĨA
+                            <i class="fa-solid fa-user"></i> {fullName || 'User'}
                         </a>
                         <ul className="dropdown-menu dropdown-menu-dark">
-                            <li>
+                            <li onClick={handleClickProtify}>
                                 <a className="dropdown-item" href="/protify">
                                     PROTIFY
                                 </a>
                             </li>
-                            <li>
+                            <li onClick={handleClieckDH}>
                                 <a className="dropdown-item" href="/order">
                                     DƠN HÀNG
                                 </a>
