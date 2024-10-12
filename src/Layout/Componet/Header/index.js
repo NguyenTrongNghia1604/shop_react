@@ -193,7 +193,7 @@ export default function Header() {
                                                                   <li key={index}>
                                                                       <Images
                                                                           className={cx('img')}
-                                                                          src={`http://localhost:8081/images/${item.images}`}
+                                                                          src={`${process.env.REACT_APP_URL_BACKEND}/images/${item.images}`}
                                                                           alt="error"
                                                                       />
                                                                       <span>{item.title}</span>
@@ -209,7 +209,7 @@ export default function Header() {
                                                                   <li key={index}>
                                                                       <Images
                                                                           className={cx('img')}
-                                                                          src={`http://localhost:8081/images/${item.image}`}
+                                                                          src={`${process.env.REACT_APP_URL_BACKEND}/images/${item.image}`}
                                                                           alt="error"
                                                                       />
                                                                       <span>{item.title}</span>

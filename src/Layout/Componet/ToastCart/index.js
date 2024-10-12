@@ -161,7 +161,10 @@ function ToastCart({ boolean, update, handleClear, id }) {
                         <i class="fa-solid fa-xmark"></i>
                     </div>
                     <div className={cx('pay-cart')}>
-                        <img src={`http://localhost:8081/images/${toastData.image}`} alt={toastData.title} />
+                        <img
+                            src={`${process.env.REACT_APP_URL_BACKEND}/images/${toastData.image}`}
+                            alt={toastData.title}
+                        />
                         <div className={cx('cart-info')}>
                             <h3>{toastData.title}</h3>
                             <div className={cx('size')}>

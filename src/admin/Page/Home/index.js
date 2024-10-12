@@ -96,7 +96,10 @@ function HomeAdmin() {
                                         <td className={cx('desc')}>{item.description}</td>
                                         <td>{item.categoryId}</td>
                                         <td className={cx('images')}>
-                                            <img src={`http://localhost:8081/images/${item.image}`} alt="error" />
+                                            <img
+                                                src={`${process.env.REACT_APP_URL_BACKEND}/images/${item.image}`}
+                                                alt="error"
+                                            />
                                         </td>
                                         <td>{item.priceKm}</td>
                                         <td>{item.count}</td>

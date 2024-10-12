@@ -246,7 +246,11 @@ function Edit() {
                     />
                     <br />
                     <img
-                        src={image === null ? `http://localhost:8081/images/${item.image}` : URL.createObjectURL(image)}
+                        src={
+                            image === null
+                                ? `${process.env.REACT_APP_URL_BACKEND}/images/${item.image}`
+                                : URL.createObjectURL(image)
+                        }
                     />
                     {ck.image ? '' : <div className={cx('text-danger')}>errr</div>}
                 </div>

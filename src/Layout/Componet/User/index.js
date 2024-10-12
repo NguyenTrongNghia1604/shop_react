@@ -39,7 +39,7 @@ function User() {
             {status === 'true' ? (
                 <div className={cx('images-user')}>
                     <Images
-                        src={`http://localhost:8081/images/${avatar.images}` || images.user}
+                        src={`${process.env.REACT_APP_URL_BACKEND}/images/${avatar.images}` || images.user}
                         className={cx('images')}
                     />
                 </div>

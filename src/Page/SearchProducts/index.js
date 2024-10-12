@@ -88,7 +88,7 @@ export default function SearchProducts() {
                                                     <div className={cx('card', 'cd')}>
                                                         <a href={`/detailsProduct/${item.url}?id=${item.id}`}>
                                                             <img
-                                                                src={`http://localhost:8081/images/${item.image}`}
+                                                                src={`${process.env.REACT_APP_URL_BACKEND}/images/${item.image}`}
                                                                 className="card-img-top"
                                                                 alt="..."
                                                             />

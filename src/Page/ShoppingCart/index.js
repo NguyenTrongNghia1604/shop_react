@@ -372,7 +372,7 @@ function ShoppingCart() {
                                                     />
                                                     <div className={cx('product')}>
                                                         <Images
-                                                            src={`http://localhost:8081/images/${item.images}`}
+                                                            src={`${process.env.REACT_APP_URL_BACKEND}/images/${item.images}`}
                                                             alt="error"
                                                             className={cx('img')}
                                                         />
@@ -637,7 +637,7 @@ function ShoppingCart() {
                                                     />
                                                     <div className={cx('product')}>
                                                         <Images
-                                                            src={`http://localhost:8081/images/${item.image}`}
+                                                            src={`${process.env.REACT_APP_URL_BACKEND}/images/${item.image}`}
                                                             alt="error"
                                                             className={cx('img')}
                                                         />

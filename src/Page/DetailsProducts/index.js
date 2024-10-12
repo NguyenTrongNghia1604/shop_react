@@ -211,7 +211,7 @@ function DetailsProducts() {
                     <div className={cx('col-lg-5', 'clg-5')}>
                         <img
                             className={cx('image')}
-                            src={`http://localhost:8081/images/${imageOnchange || dataDetails.image}`}
+                            src={`${process.env.REACT_APP_URL_BACKEND}/images/${imageOnchange || dataDetails.image}`}
                             alt="error"
                         />
                         <div className={cx('sile-img')}>

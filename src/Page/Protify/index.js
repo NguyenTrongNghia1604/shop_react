@@ -146,7 +146,10 @@ function Protify() {
                             <div className={cx('avatar')}>
                                 <Images
                                     className={cx('img')}
-                                    src={`http://localhost:8081/images/${dataInfoUser.images}` || images.user}
+                                    src={
+                                        `${process.env.REACT_APP_URL_BACKEND}/images/${dataInfoUser.images}` ||
+                                        images.user
+                                    }
                                     alt="error"
                                 />
                                 <div className={cx('name')}>
