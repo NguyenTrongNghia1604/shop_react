@@ -78,3 +78,32 @@
 
     // toast
 }
+@media only screen and (min-width: 344px) and (max-width: 767px) {
+    img {
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 767px) {
+    img {
+        height: 250px;
+    }
+}
+/* Styles for small screens */
+@media only screen and (max-width: 600px) {
+    img {
+        height: 250px;
+    }
+}
+
+/* Styles for tablets */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    img {
+        height: 250px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    img {
+        height: 250px;
+    }
+}

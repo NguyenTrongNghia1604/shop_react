@@ -203,13 +203,13 @@
 // xử lý chọn or nhập mã giảm giá
 .choose_voucher {
     position: fixed;
-    top: 120px;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
     z-index: 9001;
     .wrapper_voucher {
         width: 500px;
-        height: 680px;
+        height: 600px;
         background-color: var(--bs-white);
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         padding: 20px;
@@ -232,7 +232,7 @@
             }
         }
         .choose {
-            height: 550px;
+            height: 475px;
             margin-top: 40px;
             background-color: aqua;
             overflow: auto;
