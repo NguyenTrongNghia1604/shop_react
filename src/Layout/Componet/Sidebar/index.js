@@ -115,7 +115,7 @@ export default function Sidebar() {
                                             LOGIN
                                         </a>
                                     </li>
-                                    <li onClick={handleRegister}>
+                                    <li>
                                         <a className="dropdown-item" href="/register">
                                             REGISTER
                                         </a>
