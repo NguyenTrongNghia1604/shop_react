@@ -47,7 +47,28 @@ export default function Sidebar() {
         } else {
             navigate('/login');
         }
-    }
+    };
+
+    // xử lý logout
+    const handleLogOut = async () => {
+        let res = await restfulApi.clearSessionLogin();
+        if (res && res.data && res.data.EC === 0) {
+            // Hoặc xóa tất cả cookie (nếu cần)
+            //const cookies = document.cookie.split(';');
+            // for (let i = 0; i < cookies.length; i++) {
+            //     const cookie = cookies[i];
+            //     const eqPos = cookie.indexOf('=');
+            //     const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            //     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+            // }
+            const cookiesToDelete = ['userId', 'fullname', 'images', 'status']; // Danh sách cookie cần xóa
+            cookiesToDelete.forEach((cookie) => {
+                document.cookie = `${cookie}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
+            });
+            navigate('/');
+            window.location.reload();
+        }
+    };
 
     // handleChooseCategory
     const handleChooseCategory = (id, name) => {
@@ -94,6 +115,11 @@ export default function Sidebar() {
                             <li onClick={handleClieckDH}>
                                 <a className="dropdown-item" href="/order">
                                     DƠN HÀNG
+                                </a>
+                            </li>
+                            <li onClick={handleLogOut}>
+                                <a className="nav-link" href="javascript:void(0)">
+                                    <i className="fa-sharp fa-solid fa-right-from-bracket"></i> Logout
                                 </a>
                             </li>
                         </ul>
@@ -147,11 +173,6 @@ export default function Sidebar() {
                     <li className="nav-item">
                         <a className="nav-link" href="/khuyen-mai">
                             SALE
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/">
-                            <i className="fa-sharp fa-solid fa-right-from-bracket"></i> Logout
                         </a>
                     </li>
                 </ul>
