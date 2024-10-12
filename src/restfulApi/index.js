@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import 'dotenv/config';
 const categoryDB = () => {
     return axios.get(`${process.env.URL_BACKEND}/api/v1/category`);
 };
