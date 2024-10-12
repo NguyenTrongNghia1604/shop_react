@@ -346,3 +346,42 @@
 
 // @media only screen and (min-width: 360px) and (max-width: 767px) {
 // }
+@media only screen and (min-width: 344px) and (max-width: 767px) {
+    .choose_voucher {
+        .wrapper_voucher {
+            width: 300px;
+        }
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 767px) {
+    .choose_voucher {
+        .wrapper_voucher {
+            width: 300px;
+        }
+    }
+}
+/* Styles for small screens */
+@media only screen and (max-width: 600px) {
+    .choose_voucher {
+        .wrapper_voucher {
+            width: 300px;
+        }
+    }
+}
+
+/* Styles for tablets */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .choose_voucher {
+        .wrapper_voucher {
+            width: 300px;
+        }
+    }
+}
+@media only screen and (max-width: 800px) {
+    .choose_voucher {
+        .wrapper_voucher {
+            width: 300px;
+        }
+    }
+}

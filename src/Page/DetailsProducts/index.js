@@ -222,7 +222,7 @@ function DetailsProducts() {
                                         key={index}
                                         onClick={() => handleTranferImage(item.image_path)}
                                     >
-                                        <img src={`http://localhost:8081/images/${item.image_path}`} />
+                                        <img src={`${process.env.REACT_APP_URL_BACKEND}/images/${item.image_path}`} />
                                     </div>
                                 );
                             })}

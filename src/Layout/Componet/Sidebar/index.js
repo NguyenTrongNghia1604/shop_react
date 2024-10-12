@@ -31,24 +31,6 @@ export default function Sidebar() {
         fetchData();
     }, []);
 
-    //
-    const handleClickProtify = () => {
-        if (status === 'true') {
-            navigate('/protify');
-        } else {
-            navigate('/login');
-        }
-    };
-
-    //
-    const handleClieckDH = () => {
-        if (status === 'true') {
-            navigate('/shoppingCart');
-        } else {
-            navigate('/login');
-        }
-    };
-
     // xử lý logout
     const handleLogOut = async () => {
         let res = await restfulApi.clearSessionLogin();
@@ -107,21 +89,39 @@ export default function Sidebar() {
                             <i class="fa-solid fa-user"></i> {fullName || 'User'}
                         </a>
                         <ul className="dropdown-menu dropdown-menu-dark">
-                            <li onClick={handleClickProtify}>
-                                <a className="dropdown-item" href="/protify">
-                                    PROTIFY
-                                </a>
-                            </li>
-                            <li onClick={handleClieckDH}>
-                                <a className="dropdown-item" href="/order">
-                                    DƠN HÀNG
-                                </a>
-                            </li>
-                            <li onClick={handleLogOut}>
-                                <a className="nav-link" href="javascript:void(0)">
-                                    <i className="fa-sharp fa-solid fa-right-from-bracket"></i> Logout
-                                </a>
-                            </li>
+                            {status === 'true' ? (
+                                <>
+                                    {' '}
+                                    <li>
+                                        <a className="dropdown-item" href="/protify">
+                                            PROTIFY
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a className="dropdown-item" href="/order">
+                                            DƠN HÀNG
+                                        </a>
+                                    </li>
+                                    <li onClick={handleLogOut}>
+                                        <a className="nav-link" href="javascript:void(0)">
+                                            Logout <i className="fa-sharp fa-solid fa-right-from-bracket"></i>
+                                        </a>
+                                    </li>
+                                </>
+                            ) : (
+                                <>
+                                    <li>
+                                        <a className="dropdown-item" href="/login">
+                                            LOGIN
+                                        </a>
+                                    </li>
+                                    <li onClick={handleRegister}>
+                                        <a className="dropdown-item" href="/register">
+                                            REGISTER
+                                        </a>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </li>
                     <li className="nav-item">
