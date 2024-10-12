@@ -1,9 +1,8 @@
 import axios from 'axios';
-import 'dotenv/config';
+
 const categoryDB = () => {
     return axios.get(`${process.env.URL_BACKEND}/api/v1/category`);
 };
-
 // login by tk admin
 const loginAdmin = (formData) => {
     return axios.post(`${process.env.URL_BACKEND}/api/v1/login-admin`, formData, {
