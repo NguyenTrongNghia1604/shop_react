@@ -45,27 +45,29 @@ function AdminLogin() {
         document.cookie = `${name}=${value}; ${expires}; path=/`; // Đặt cookie
     };
     const handleLogin = async () => {
-        if (check()) {
-            let formData = new FormData();
-            formData.append('account', email);
-            formData.append('password', password);
-            let res = await restfulApi.loginAdmin(formData);
-            if (res && res.data && res.data.EC === 0) {
-                const role = res.data.DT.role; // Giả sử token nằm trong `DT` của response
-                const token = res.data.ST;
-                localStorage.setItem('role', role); // Lưu token vào localStorage
-                localStorage.setItem('token', token);
-                navigate('/admin/home');
-                // Sử dụng hàm
-                setCookie('adminStatus', res.data.ST, 15); // Cookie sẽ tự động xóa sau 15 phút
+        try {
+            if (check()) {
+                let formData = new FormData();
+                formData.append('account', email);
+                formData.append('password', password);
+                let res = await restfulApi.loginAdmin(formData);
+                if (res && res.data && res.data.EC === 0) {
+                    const role = res.data.DT.role; // Giả sử token nằm trong `DT` của response
+                    const token = res.data.ST;
+                    localStorage.setItem('role', role); // Lưu token vào localStorage
+                    localStorage.setItem('token', token);
+                    navigate('/admin/home');
+                    // Sử dụng hàm
+                    setCookie('adminStatus', res.data.ST, 15); // Cookie sẽ tự động xóa sau 15 phút
+                }
             }
-        } else {
-            toast.error('Vui lòng đăng nhập lại');
+        } catch (error) {
+            toast.error(error.response.data.EM);
         }
     };
-    const blur = () => {
-        check();
-    };
+    // const blur = () => {
+    //     check();
+    // };
     return (
         <>
             <div className={cx('image-background')}>
@@ -81,9 +83,9 @@ function AdminLogin() {
                             type="text"
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Nhập Email"
-                            onBlur={blur}
+                            //onBlur={blur}
                         />
-                        {!ck.email && <div className={cx('error')}>Không đúng email</div>}
+                        {/* {!ck.email && <div className={cx('error')}>Không đúng email</div>} */}
                     </div>
                     <div className={cx('item')}>
                         <label className={cx('text')}>Password</label>
@@ -92,9 +94,9 @@ function AdminLogin() {
                             type="password"
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="Nhập Password"
-                            onBlur={blur}
+                            // onBlur={blur}
                         />
-                        {!ck.password && <div className={cx('error')}>Password đẫ sai</div>}
+                        {/* {!ck.password && <div className={cx('error')}>Password đẫ sai</div>} */}
                     </div>
                     <div className={cx('item')}>
                         <button type="button" onClick={handleLogin}>

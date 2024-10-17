@@ -3,6 +3,16 @@ import axios from 'axios';
 const categoryDB = () => {
     return axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/v1/category`);
 };
+
+// order
+const ordersDB = () => {
+    return axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/v1/orders`);
+};
+
+// xử lý thay đổi status order
+const updateOrderDB = (id, e) => {
+    return axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/v1/update-status/${id}`, e);
+};
 // login by tk admin
 const loginAdmin = (formData) => {
     return axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/v1/login-admin`, formData, {
@@ -35,11 +45,14 @@ const versionLogin = () => {
 
 // nhận database Products phân trang
 const paginationProductsDB = (currentPages, currentLimit) => {
-    return axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/v1/products/read?page=${currentPages}&limit=${currentLimit}`, {
-        headers: {
-            'Content-Type': 'application/json',
+    return axios.get(
+        `${process.env.REACT_APP_URL_BACKEND}/api/v1/products/read?page=${currentPages}&limit=${currentLimit}`,
+        {
+            headers: {
+                'Content-Type': 'application/json',
+            },
         },
-    });
+    );
 };
 
 // createProducts
@@ -105,10 +118,15 @@ const getCookie = (name) => {
     return null;
 };
 const checkLoginStatus = getCookie('status');
+const userId = getCookie('userId');
 // take data shopping cart
 const takeDataShoppingCart = () => {
     if (checkLoginStatus === 'true') {
-        return axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/v1/take-data-shoppingcart`);
+        return axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/v1/take-data-shoppingcart`, {
+            headers: {
+                Authorization: `${userId}`, // Gửi token trong header
+            },
+        });
     } else {
         return;
     }
@@ -194,8 +212,8 @@ const checkLogin = (userId) => {
 };
 
 // clearSessionLogin
-const clearSessionLogin = () => {
-    return axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/v1/clear-session-login`);
+const clearSessionLogin = (userId) => {
+    return axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/v1/clear-session-login`, userId);
 };
 
 // thanh toán
@@ -217,6 +235,15 @@ const updataInfoUser = (data) => {
     });
 };
 
+// xử lý cập nhật đơn hàng
+const getOrderClientDB = () => {
+    return axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/v1/get-order-db`, {
+        headers: {
+            Authorization: `${userId}`, // Gửi token trong header
+        },
+    });
+};
+
 // xử lý like product
 const likeProduct = (formData) => {
     return axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/v1/like-product`, formData, {
@@ -227,6 +254,8 @@ const likeProduct = (formData) => {
 };
 export default {
     categoryDB,
+    ordersDB,
+    updateOrderDB,
     // admin
     loginAdmin,
     versionLogin,
@@ -265,5 +294,7 @@ export default {
     payment,
     getUser,
     updataInfoUser,
+
+    getOrderClientDB,
     likeProduct,
 };

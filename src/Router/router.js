@@ -17,7 +17,7 @@ import {
     CategoryProduct,
 } from '../Page/index';
 import OnlyLogin from '../admin/Layout/OnlyLogin';
-import { HomeAdmin, Add, Edit, AdminLogin } from '../admin/index';
+import { HomeAdmin, Add, Edit, Orders, AdminLogin } from '../admin/index';
 const publicConfig = [
     {
         path: '/',
@@ -90,6 +90,10 @@ const privateConfig = [
     {
         path: '/admin/home/edit',
         comment: Edit,
+    },
+    {
+        path: '/admin/order',
+        comment: Orders,
     },
     {
         path: '/admin/login',

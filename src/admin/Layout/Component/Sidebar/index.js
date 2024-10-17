@@ -26,7 +26,7 @@ function SidebarAdmin({ isOpen = true }) {
         <div className={cx('sidebar', 'styles')} onClick={(e) => e.stopPropagation()}>
             <ul className={cx('sidebar-nav')}>
                 <li className={cx('item', 'act')}>
-                    <a className={cx('hr')} href="/admin/123">
+                    <a className={cx('hr')} href="/admin/home">
                         <span>
                             <i className="fa-thin fa-grid-2"></i> Dashboard
                         </span>
@@ -41,7 +41,7 @@ function SidebarAdmin({ isOpen = true }) {
                     </a>
                     <ul className={cx('component', `${show ? 'act' : ''}`)}>
                         <li className={cx('item_comp')}>
-                            <a className={cx('hr_cp')} href="/admin/123">
+                            <a className={cx('hr_cp')} href="/admin/order">
                                 <span>
                                     <i class="fa-light fa-cart-shopping"></i> Đơn hàng
                                 </span>

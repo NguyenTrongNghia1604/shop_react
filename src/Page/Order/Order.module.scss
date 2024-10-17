@@ -1,6 +1,7 @@
 @import url('../../assets/root/root.module.scss');
 
 .order {
+    margin: 100px 0 200px 0;
     .wrapper {
         .info {
             h3 {
@@ -38,12 +39,12 @@
                     display: flex;
                     align-items: center;
                     .img {
-                        width: 100px;
                         height: 100px;
                     }
                     span {
                         font-size: 20px;
                         margin-left: 20px;
+                        cursor: pointer;
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 2; /* Hiển thị tối đa 3 dòng */
