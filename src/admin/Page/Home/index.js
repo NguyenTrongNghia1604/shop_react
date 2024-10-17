@@ -45,7 +45,7 @@ function HomeAdmin() {
 
     // handleEdit
     const handleEdit = (item) => {
-        navigate('/admin/edit', { state: { item } });
+        navigate('/admin/home/edit', { state: { item } });
     };
 
     // handleDelete
@@ -63,7 +63,7 @@ function HomeAdmin() {
     return (
         <>
             <div className={cx('home_admin')}>
-                <a href="/admin/add" className={cx('btn btn-primary', 'add')}>
+                <a href="/admin/home/add" className={cx('btn btn-primary', 'add')}>
                     Thêm mới
                 </a>
                 <h1>Home</h1>
