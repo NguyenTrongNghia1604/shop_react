@@ -213,7 +213,11 @@ const checkLogin = (userId) => {
 
 // clearSessionLogin
 const clearSessionLogin = (userId) => {
-    return axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/v1/clear-session-login`, userId);
+    return axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/v1/clear-session-login`, {
+        headers: {
+            Authorization: `${userId}`, // Gửi token trong header
+        },
+    });
 };
 
 // thanh toán
