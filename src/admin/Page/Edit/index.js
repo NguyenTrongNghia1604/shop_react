@@ -150,7 +150,7 @@ function Edit() {
             let res = await restfulApi.updateProductsDB(formData, item.id);
             if (res && res.data && res.data.EC === 0) {
                 toast.success(res.data.EM);
-                navigate('/admin/123');
+                navigate('/admin/home');
             } else {
                 toast.error(res.data.EM);
             }
@@ -295,7 +295,7 @@ function Edit() {
                         onChange={(e) => setCount(e.target.value)}
                         className="form-control"
                         id="exampleFormControlInput1"
-                        placeholder="PriceKM"
+                        placeholder="Số lượng"
                         onBlur={handleBlur}
                     />
                 </div>
@@ -309,7 +309,7 @@ function Edit() {
                         onChange={(e) => setUrl(e.target.value)}
                         className="form-control"
                         id="exampleFormControlInput1"
-                        placeholder="PriceKM"
+                        placeholder="Url"
                         onBlur={handleBlur}
                     />
                     {ck.url ? '' : <div className={cx('text-danger')}>errr</div>}
@@ -327,10 +327,10 @@ function Edit() {
                         onBlur={handleBlur}
                     >
                         <option selected>Thể loại</option>
-                        <option value="1">Áo</option>
-                        <option value="4">Quần</option>
-                        <option value="2">Phụ kiện</option>
-                        <option value="3">Giầy dép</option>
+                        <option value="áo">Áo</option>
+                        <option value="quần">Quần</option>
+                        <option value="phụ kiện">Phụ kiện</option>
+                        <option value="giầy dép">Giầy dép</option>
                     </select>
                     {ck.type ? '' : <div className={cx('text-danger')}>errr</div>}
                 </div>
