@@ -65,9 +65,10 @@ function Register() {
             let res = await restfulApi.register(formData);
 
             if (res && res.data && res.data.EC === 0) {
+                toast.success(res.data.EM);
                 navigater('/login');
             } else {
-                toast.error('Đăng ký không thành công');
+                toast.error(res.data.EM);
             }
         } else {
             check();
