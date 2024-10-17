@@ -39,7 +39,7 @@ export const RederMenu = ({ list }) => {
                     navigate('/');
                     window.location.reload();
                 } else {
-                    alert('Đã xảy ra lỗi vui lòng thử lại sau');
+                    alert(res.data.EM);
                 }
             } catch (error) {
                 console.log(error);
