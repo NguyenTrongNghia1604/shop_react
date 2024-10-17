@@ -10,7 +10,7 @@ import { useState } from 'react';
 const cx = classNames.bind(style);
 function ToastConfirm({ id }) {
     const [show, setShow] = useState(true);
-    const handleNext = async (id) => {
+    const handleNext = async () => {
         let res = await restfulApi.deleteProductDB(id);
         if (res && res.data && res.data.EC === 0) {
             toast.success(res.data.EM);
@@ -32,7 +32,7 @@ function ToastConfirm({ id }) {
                         </button>
                     </div>
                     <div className={cx('action')}>
-                        <button className={cx('next')} onClick={() => handleNext(id)}>
+                        <button className={cx('next')} onClick={() => handleNext()}>
                             Next
                         </button>
                         <button className={cx('close')} onClick={handleClose}>

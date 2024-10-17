@@ -78,7 +78,7 @@ const updateProductsDB = (formData, id) => {
 };
 
 const deleteProductDB = (id) => {
-    return axios.delete(`${process.env.REACT_APP_URL_BACKEND}/api/v1/delete-products/${id}`);
+    return axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/v1/delete-products/${id}`);
 };
 
 // shoppingCart
