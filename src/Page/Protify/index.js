@@ -131,6 +131,9 @@ function Protify() {
             if (res && res.data && res.data.EC === 0) {
                 toast.success(res.data.EM);
                 setEditInfo(false);
+                setTimeout(() => {
+                    window.location.reload();
+                }, 5000);
             }
         } catch (error) {
             console.log(error);
