@@ -40,7 +40,7 @@ function User() {
                 <div className={cx('images-user')}>
                     <Images
                         src={
-                            avatar.images !== ''
+                            avatar.images !== ' '
                                 ? `${process.env.REACT_APP_URL_BACKEND}/images/${avatar.images}`
                                 : images.user
                         }
