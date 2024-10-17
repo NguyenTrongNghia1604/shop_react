@@ -18,26 +18,25 @@ export const RederMenu = ({ list }) => {
     };
     const userId = getCookie('userId');
     const handleClickRef = async (item) => {
-        console.log('item', item);
-        console.log('item.clear', item.clear);
         if (item.clear) {
             try {
                 let res = await restfulApi.clearSessionLogin(userId);
+                // Hoặc xóa tất cả cookie (nếu cần)
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i];
+                    const eqPos = cookie.indexOf('=');
+                    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+                }
+                // const cookiesToDelete = ['userId', 'fullname', 'images', 'status']; // Danh sách cookie cần xóa
+                // cookiesToDelete.forEach((cookie) => {
+                //     document.cookie = `${cookie}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
+                // });
+                navigate('/');
+                window.location.reload();
                 if (res && res.data && res.data.EC === 0) {
-                    // Hoặc xóa tất cả cookie (nếu cần)
-                    const cookies = document.cookie.split(';');
-                    for (let i = 0; i < cookies.length; i++) {
-                        const cookie = cookies[i];
-                        const eqPos = cookie.indexOf('=');
-                        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-                        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
-                    }
-                    // const cookiesToDelete = ['userId', 'fullname', 'images', 'status']; // Danh sách cookie cần xóa
-                    // cookiesToDelete.forEach((cookie) => {
-                    //     document.cookie = `${cookie}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
-                    // });
-                    navigate('/');
-                    window.location.reload();
+                    console.log('res.data.EM', res.data.EM);
                 } else {
                     alert(res.data.EM);
                 }
