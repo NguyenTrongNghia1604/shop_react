@@ -68,7 +68,7 @@ function Register() {
                 toast.success(res.data.EM);
                 navigater('/login');
             } else {
-                toast.error(res.data.EM);
+                toast.error(res.data.EM || 'Đăng ký thất bại, vui lòng thử lại.');
             }
         } else {
             check();
